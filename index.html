@@ -5,15 +5,43 @@
         <title>CUCS - Yahtzee</title>
         <link href="css/normalize.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <!-- Dropdown menu CSS-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <!-- Dropdown menu-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- Our Code-->
         <script src="script.js"></script>
     </head>
     <body>
         <div class="wrapper">
             <h1>CUCS - Yahtzee</h1>
             <canvas id="yahtzee" width="960" height="480"></canvas>
+            
             <!-- Simple button to roll the dice -->
             <button id="rollButton">Roll Dice</button>
+        
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="scoreMenu" data-toggle="dropdown">Scoring
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="scoreMenu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Aces</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Twos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Threes</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fours</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fives</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sixes</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 of a Kind</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 of a Kind</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Full House</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Small Straight</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Large Straight</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Yahtzee!</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chance</a></li>
+            <!-- Can use a disabled class to take away selections once they have been chosen http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_comp_dropdown_disabled&stacked=h-->
+            </ul>
+        </div>
         </div>
     </body>
 </html>

@@ -1,0 +1,1 @@
+alert("Testing some stuff in Javascript");

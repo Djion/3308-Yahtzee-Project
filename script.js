@@ -1,6 +1,11 @@
 var c;
 var ctx;
 var diceImg;
+var dice1;
+var dice2;
+var dice3;
+var dice4;
+var dice5;
 
 //Setup the game
 $(document).ready(function() {
@@ -11,6 +16,11 @@ $(document).ready(function() {
 
     $("#rollButton").click(function() {
         playGame();
+    });
+
+    $(document.body).on('click', '.dropdown-menu li a', function (e) {
+    var selText = $(this).text(); 
+    scoreSelection(selText);
     });
 
 });
@@ -55,4 +65,10 @@ var playGame = function(){
     drawDice(dice5, 64 * 5, diceHeight);
     console.log(dice1 + ", " + dice2 + ", " + dice3 + ", " + dice4 + ", " + dice5);
 }
+
+var scoreSelection = function(selText){
+    console.log(selText);
+    
+}
+
 
