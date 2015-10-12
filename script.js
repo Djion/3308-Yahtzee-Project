@@ -70,20 +70,20 @@ var scoreSelection = function(selText,d1,d2,d3,d4,d5){
     console.log(selText);
     if(selText === "Aces")
     {
-        var scoreText = ace_score(d1,d2,d3,d4,d5);
+        var scoreText = OneToSix_Sum(1,d1,d2,d3,d4,d5);
         console.log(scoreText);
         ctx.fillText("Score for Aces is " + scoreText,30,150);
 
     }
 }
 
-var ace_score = function(d1,d2,d3,d4,d5)
+var OneToSix_Sum = function(c,d1,d2,d3,d4,d5)
 {
     var total_score = 0;
     var diceArray = [d1,d2,d3,d4,d5];
     for(i = 0; i < 5; i++){
-        if(diceArray[i] === 1){
-            total_score = total_score +1;
+        if(diceArray[i] === c){
+            total_score = total_score +c;
         }
     }
     return total_score;
