@@ -2,3 +2,9 @@
 	max-width: 960px;
 	margin: 0 auto;
 }
+
+#yahtzee {
+	display: block;
+	border: 1px solid black;
+	margin: 20px 0;
+}
