@@ -1,3 +1,7 @@
+body {
+	background-color: #02779E;
+}
+
 .wrapper {
 	max-width: 960px;
 	margin: 0 auto;
@@ -17,4 +21,9 @@ table {
 tr, td {
 	border: 1px solid black;
 	padding: 2px 4px !important;
+}
+
+
+table, canvas {
+	background-color: white;
 }
