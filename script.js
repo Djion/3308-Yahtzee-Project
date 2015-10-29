@@ -8,7 +8,7 @@ var dice2;
 var dice3;
 var dice4;
 var dice5;
-var activeDice = [dice1, dice2, dice3, dice4];
+var activeDice = [dice1, dice2, dice3, dice4, dice5];
 var diceImgs = [];
 
 //Setup the game
