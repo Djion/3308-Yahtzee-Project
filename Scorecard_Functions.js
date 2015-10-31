@@ -24,19 +24,25 @@ var OneToSixSum = function(c,Dice)
 //Variables : Dice = an array of dice
 var Small_Straight = function(Dice)
 {
+	// Setting up a new array for ease of use
+	var DiceValues = [];
+	for(i = 0; i <5; i++){
+		DiceValues[i] = Dice[i].diceVal;
+	}
+
 	// Sort the dice in numerical ascending order
-	Dice.sort();
+	DiceValues.sort();
 	var total_score = 0;
 
 	// If the first four dice in the sorted array are less than one another you have a small straight, sum and return
-	if(Dice[0] < Dice[1] < Dice[2] < Dice [3]){
-		total_score = Dice[0]+Dice[1]+Dice[2]+Dice[3]+Dice[4]
+	if(DiceValues[0] < DiceValues[1] < DiceValues[2] < DiceValues[3]){
+		total_score = DiceValues[0]+DiceValues[1]+DiceValues[2]+DiceValues[3]+DiceValues[4]
 		return total_score;
 	}
 	// If the last 4 dice in the sorted array are less than one another you have a small straight, sum and return
-	else if(Dice[1] < Dice[2] < Dice[3] < Dice[4])
+	else if(DiceValues[1] < DiceValues[2] < DiceValues[3] < DiceValues[4])
 	{
-		total_score = Dice[0]+Dice[1]+Dice[2]+Dice[3]+Dice[4]
+		total_score = DiceValues[0]+DiceValues[1]+DiceValues[2]+DiceValues[3]+DiceValues[4]
 		return total_score;
 	}
 	else{
@@ -48,13 +54,18 @@ var Small_Straight = function(Dice)
 //Variables : Dice = an array of dice
 var Large_Straight = function(Dice)
 {
+	// Setting up a new array for ease of use
+	var DiceValues = [];
+	for(i = 0; i <5; i++){
+		DiceValues[i] = Dice[i].diceVal;
+	}
 	// Sort the dice in numberical order, ascending
 	Dice.sort();
 	var total_score = 0;
 
 	//If the dice are all less than one another in numerical ascending order then you have a straight, sum dice return
-	if(Dice[0] < Dice[1] < Dice[2] < Dice [3] < Dice[4]){
-		total_score = Dice[0] + Dice[1] + Dice[2] + Dice[3] + Dice[4]
+	if(DiceValues[0] < DiceValues[1] < DiceValues[2] < DiceValues[3] < DiceValues[4]){
+		total_score = DiceValues[0] + DiceValues[1] + DiceValues[2] + DiceValues[3] + DiceValues[4]
 		return total_score;
 	}
 	else{
@@ -66,17 +77,15 @@ var Large_Straight = function(Dice)
 //Variables : Dice = an array of dice
 var Full_House = function(Dice)
 {
+	var full = 0;
 	var total_score = 0;
 	//This array is to store the number of dice that are the same. If the passed array is 1,1,2,2,4 the numbers array will read 2,2,0,1,0
 	var numbers = [0,0,0,0,0];
-	var full = 0;
-
-
 	// Creates the values for the Numbers array explained above
 	for(i = 0; i < 5; i++){
 		for(k = 0; k < 5; k++){
-			if(i+1 === Dice[k]){
-				numbers[i] = numbers[i]++;
+			if(i+1 === Dice[k].diceVal){
+				numbers[i] = numbers[i] + 1;
 			}
 		}
 	}
@@ -118,8 +127,8 @@ var Three_OAK = function(Dice)
 	// Creates the values for the Numbers array explained above
 	for(i = 0; i < 5; i++){
 		for(k = 0; k < 5; k++){
-			if(i+1 === Dice[k]){
-				numbers[i] = numbers[i]++;
+			if(i+1 === Dice[k].diceVal){
+				numbers[i] = numbers[i] + 1;
 			}
 		}
 	}
@@ -127,8 +136,8 @@ var Three_OAK = function(Dice)
 	for(i = 0; i < 5; i++)
 	{
 		if(numbers[i] === 3){
-			total_score = i * 3;
-			break;
+			total_score = i+1 * 3;
+			return total_score;
 		}
 	}
 
@@ -143,26 +152,25 @@ var Four_OAK = function(Dice)
 	var total_score = 0;
 	//This array is to store the number of dice that are the same. If the passed array is 1,1,2,2,4 the numbers array will read 2,2,0,1,0
 	var numbers = [0,0,0,0,0];
-
-
 	// Creates the values for the Numbers array explained above
 	for(i = 0; i < 5; i++){
 		for(k = 0; k < 5; k++){
-			if(i+1 === Dice[k]){
-				numbers[i] = numbers[i]++;
+			if(i+1 === Dice[k].diceVal){
+				numbers[i] = numbers[i] + 1;
 			}
 		}
 	}
-	// Looks at the array of numbers for a 4 of a kind if it finds one sets the total score to 4 of that value
+	// Looks at the array of numbers for a 4 of a kind if it finds one sets the total score to 3 of that value
 	for(i = 0; i < 5; i++)
 	{
 		if(numbers[i] === 4){
-			total_score = i * 4;
-			break;
+			total_score = i+1 * 4;
+			return total_score;
 		}
 	}
 
 	return total_score;
+
 }
 
 //Function to return the scorecard option for Five of A Kind
@@ -170,8 +178,9 @@ var Four_OAK = function(Dice)
 var Five_OAK = function(Dice)
 {
 	var total_score = 0;
-	if(Dice[0] === Dice[1] === Dice[2] === Dice[3] === Dice[4]){
-		total_score = Dice[0] * 5;
+	console.log(Dice[0].diceVal)
+	if(Dice[0].diceVal === Dice[1].diceVal === Dice[2].diceVal === Dice[3].diceVal === Dice[4].diceVal){
+		total_score = Dice[0].diceVal * 5;
 		return total_score;
 	}
 	else{
@@ -183,6 +192,7 @@ var Five_OAK = function(Dice)
 //Variables : Dice = an array of dice
 var Chance = function(Dice)
 {
-	total_score = Dice[0] + Dice[1] + Dice[2] + Dice[3] + Dice[4];
+	total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
+	console.log(total_score);
 	return total_score;
 }

@@ -112,22 +112,42 @@ var scoreSelection = function(selText){
         ctx.fillText("Score for Sixes is " + scoreText, 30, 150);
     }
     else if(selText === "3 of a Kind"){
-        scoreText = 0;
+        scoreText = Three_OAK(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Three of a kind is " + scoreText, 30, 150);
     }
     else if(selText === "4 of a Kind"){
-        scoreText = 0;
+        scoreText = Four_OAK(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Three of a kind is " + scoreText, 30, 150);
     }
-    else if(selText === "Full Straight"){
-        scoreText = 0;
+    //THIS FUNCTION IS CURRENTLY BROKEN
+    else if(selText === "Full House"){
+        scoreText = Full_House(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Full House is " + scoreText, 30, 150);
     }
+    //THIS FUNCTION IS CURRENTLY BROKEN
+    else if(selText === "Small Straight"){
+        scoreText = Small_Straight(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Small Straight is " + scoreText, 30, 150);
+    }
+    //THIS FUNCTION IS CURRENTLY BROKEN
     else if(selText === "Large Straight"){
-        scoreText = 0;
+        scoreText = Large_Straight(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Large Straight is " + scoreText, 30, 150);
     }
     else if(selText === "Yahtzee!"){
-        scoreText = 0;
+        scoreText = Five_OAK(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Yahtzee! is " + scoreText, 30, 150);
     }
     else if(selText === "Chance"){
-        scoreText = 0;
+        scoreText = Chance(allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Chance is " + scoreText, 30, 150);
     }
 }
 
