@@ -7,12 +7,13 @@
 //Function to return the scorecard options of 1 - 6
 //Variables : c = integer 1-6
 //			  Dice = an array of dice
-var OneToSix_Sum = function(c,Dice)
+var OneToSixSum = function(c,Dice)
 {
     var total_score = 0;
     // Looks at the array of dice and compares it to the variable c
     for(i = 0; i < 5; i++){
-        if(Dice[i] === c){
+        if(Dice[i].diceVal === c){
+        	console.log(Dice[i].diceVal);
             total_score = total_score +c;
         }
     }

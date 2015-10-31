@@ -1,3 +1,5 @@
+// Alex -- We are now importing all of the scorecard functions from a seperate script
+
 var c;
 var ctx;
 
@@ -77,24 +79,56 @@ var rollActiveDice = function() {
 
 var scoreSelection = function(selText){
     console.log(selText);
+    var scoreText;
     if (selText === "Aces") {
-        var scoreText = oneToSixSum(1);
+        scoreText = OneToSixSum(1,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Aces is " + scoreText, 30, 150);
     }
-}
-
-var oneToSixSum = function(c)
-{
-    var total_score = 0;
-
-    for (i = 0; i < 5; i++) {
-        if (allDice[i].diceVal === c){
-            total_score += c;
-        }
+    else if(selText === "Twos"){
+        scoreText = OneToSixSum(2,allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Twos is " + scoreText, 30, 150);
+        
     }
-
-    return total_score;
+    else if(selText === "Threes"){
+        scoreText = OneToSixSum(3,allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Threes is " + scoreText, 30, 150);
+    }
+    else if(selText === "Fours"){
+        scoreText = OneToSixSum(4,allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Fours is " + scoreText, 30, 150);
+    }
+    else if(selText === "Fives"){
+        scoreText = OneToSixSum(5,allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Fives is " + scoreText, 30, 150);
+    }
+    else if(selText === "Sixes"){
+        scoreText = OneToSixSum(6,allDice);
+        console.log(scoreText);
+        ctx.fillText("Score for Sixes is " + scoreText, 30, 150);
+    }
+    else if(selText === "3 of a Kind"){
+        scoreText = 0;
+    }
+    else if(selText === "4 of a Kind"){
+        scoreText = 0;
+    }
+    else if(selText === "Full Straight"){
+        scoreText = 0;
+    }
+    else if(selText === "Large Straight"){
+        scoreText = 0;
+    }
+    else if(selText === "Yahtzee!"){
+        scoreText = 0;
+    }
+    else if(selText === "Chance"){
+        scoreText = 0;
+    }
 }
 
 var playGame = function(){
