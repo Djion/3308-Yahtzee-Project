@@ -117,7 +117,7 @@ var Three_OAK = function(Dice)
 		numbers[Dice[i] - 1]++;
 	}
 
-	// Looks at the array of numbers for a 3 of a kind if it finds one sets the total score to 3 of that value
+	// Looks at the array of numbers for a 3 or more of a kind if it finds one sets the total score to 3 of that value
 	for(i = 0; i < 6; i++)
 	{
 		if(numbers[i] >= 3){
@@ -143,7 +143,7 @@ var Four_OAK = function(Dice)
 		numbers[Dice[i] - 1]++;
 	}
 
-	// Looks at the array of numbers for a 4 of a kind if it finds one sets the total score to 4 of that value
+	// Looks at the array of numbers for a 4 or more of a kind if it finds one sets the total score to 4 of that value 
 	for(i = 0; i < 6; i++)
 	{
 		if(numbers[i] >= 4){
