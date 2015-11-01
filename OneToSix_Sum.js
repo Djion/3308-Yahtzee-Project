@@ -13,7 +13,7 @@ var OneToSix_Sum = function(c,Dice)
     // Looks at the array of dice and compares it to the variable c
     for(i = 0; i < 5; i++){
         if(Dice[i] === c){
-            total_score = total_score +c;
+            total_score += c;
         }
     }
     return total_score;
@@ -23,42 +23,50 @@ var OneToSix_Sum = function(c,Dice)
 //Variables : Dice = an array of dice
 var Small_Straight = function(Dice)
 {
-	// Sort the dice in numerical ascending order
-	Dice.sort();
 	var total_score = 0;
+	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
+	var numbers = [0, 0, 0, 0, 0, 0];
 
-	// If the first four dice in the sorted array are less than one another you have a small straight, sum and return
-	if(Dice[0] < Dice[1] < Dice[2] < Dice [3]){
-		total_score = Dice[0]+Dice[1]+Dice[2]+Dice[3]+Dice[4]
+	//Increments the numbers array by one at the index of the die
+	for (var i = 0; i < 5; i++) {
+		numbers[Dice[i] - 1]++;
+	}
+
+	//These three if statements check if there are 4 dice that are in ascending numerical order
+	if (numbers[0] >= 1 && numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1) {
+		total_score = 10;
 		return total_score;
-	}
-	// If the last 4 dice in the sorted array are less than one another you have a small straight, sum and return
-	else if(Dice[1] < Dice[2] < Dice[3] < Dice[4])
-	{
-		total_score = Dice[0]+Dice[1]+Dice[2]+Dice[3]+Dice[4]
+	}else if (numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1) {
+		total_score = 14;
 		return total_score;
+	}else if (numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1 && numbers[5] >= 1) {
+		total_score = 18;
 	}
-	else{
-		return 0;
-	}
+	return total_score;
 }
 
 //Function to return the scorecard option for Large Straight (A large straight is any 5 dice that are in numberical order)
 //Variables : Dice = an array of dice
 var Large_Straight = function(Dice)
 {
-	// Sort the dice in numberical order, ascending
-	Dice.sort();
 	var total_score = 0;
+	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
+	var numbers = [0, 0, 0, 0, 0, 0];
 
-	//If the dice are all less than one another in numerical ascending order then you have a straight, sum dice return
-	if(Dice[0] < Dice[1] < Dice[2] < Dice [3] < Dice[4]){
-		total_score = Dice[0] + Dice[1] + Dice[2] + Dice[3] + Dice[4]
+	//Increments the numbers array by one at the index of the die
+	for (var i = 0; i < 5; i++) {
+		numbers[Dice[i] - 1]++;
+	}
+	
+	//These three if statements check if there are 5 dice that are in ascending numerical order
+	if (numbers[0] == 1 && numbers[1] == 1 && numbers[2] == 1 && numbers[3] == 1 && numbers[4] == 1) {
+		total_score = 15;
 		return total_score;
+	}else if (numbers[1] == 1 && numbers[2] == 1 && numbers[3] == 1 && numbers[4] == 1 && numbers[5] == 1) {
+		total_score = 20
 	}
-	else{
-		return 0;
-	}
+	return total_score;
+	
 }
 
 //Function to return the scorecard option for Full House (A full house is when you have three of one number and 2 of another number example : 2,2,3,3,3)
@@ -66,45 +74,34 @@ var Large_Straight = function(Dice)
 var Full_House = function(Dice)
 {
 	var total_score = 0;
-	//This array is to store the number of dice that are the same. If the passed array is 1,1,2,2,4 the numbers array will read 2,2,0,1,0
-	var numbers = [0,0,0,0,0];
-	var full = 0;
+	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
+	var numbers = [0, 0, 0, 0, 0, 0];
+	var full = false;
 
-
-	// Creates the values for the Numbers array explained above
-	for(i = 0; i < 5; i++){
-		for(k = 0; k < 5; k++){
-			if(i+1 === Dice[k]){
-				numbers[i] = numbers[i]++;
-			}
-		}
+	//Increments the numbers array by one at the index of the die
+	for (var i = 0; i < 5; i++) {
+		numbers[Dice[i] - 1]++;
 	}
-	
-	// Looks at the array of numbers for a 3 of a kind
-	for(i = 0; i < 5; i++)
-	{
-		if(numbers[i] === 3){
-			full++;
+
+	//Checks if there is a 3 of a kind
+	for (var i = 0; i < 6; i++) {
+		if (numbers[i] == 3) {
+			full = true;
 			break;
 		}
 	}
 
-	//If there is a 3 of a kind check for a two of a kind
-	if(full === 1){
-		for(i = 0; i<5; i++){
-			if(numbers[i] === 2){
-				full++;
-				break;
+	//Checks if there is a 2 of a kind only if there is a 3 of a kind
+	if (full) {
+		for (var i = 0; i < 6; i++) {
+			if (numbers[i] == 2) {
+				total_score = Dice[0] + Dice[1] + Dice [2] + Dice[3] + Dice[4];
+				return total_score;
 			}
 		}
 	}
-	//If there is a 3 of a kind and a 2 of a kind you have a full house, sum the dice and return
-	if(full ===2){
-		total_score = dice[0]+dice[1]+dice[2]+dice[3]+dice[4];
-	}
-	else{
-		return 0;
-	}
+	return total_score;
+
 }
 
 //Function to return the scorecard option for Three of A kind
