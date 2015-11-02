@@ -12,7 +12,7 @@ var OneToSix_Sum = function(c,Dice)
     var total_score = 0;
     // Looks at the array of dice and compares it to the variable c
     for(i = 0; i < 5; i++){
-        if(Dice[i] === c){
+        if(Dice[i].diceVal === c){
             total_score += c;
         }
     }
@@ -29,17 +29,15 @@ var Small_Straight = function(Dice)
 
 	//Increments the numbers array by one at the index of the die
 	for (var i = 0; i < 5; i++) {
-		numbers[Dice[i] - 1]++;
+		numbers[Dice[i].diceVal - 1]++;
 	}
 
 	//These three if statements check if there are 4 dice that are in ascending numerical order
 	if (numbers[0] >= 1 && numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1) {
 		total_score = 10;
-		return total_score;
-	}else if (numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1) {
+	}if (numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1) {
 		total_score = 14;
-		return total_score;
-	}else if (numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1 && numbers[5] >= 1) {
+	}if (numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1 && numbers[5] >= 1) {
 		total_score = 18;
 	}
 	return total_score;
@@ -162,7 +160,7 @@ var Five_OAK = function(Dice)
 	var total_score = 0;
 
 	//Checks if 5 dice are equal
-	if(Dice[0] === Dice[1] && Dice[0] === Dice[2] && Dice[0]=== Dice[3] && Dice[0]=== Dice[4]){
+	if(Dice[0].diceval === Dice[1] && Dice[0] === Dice[2] && Dice[0]=== Dice[3] && Dice[0]=== Dice[4]){
 		total_score = Dice[0] * 5;
 		return total_score;
 	}

@@ -60,11 +60,22 @@ var Large_Straight = function(Dice)
 		DiceValues[i] = Dice[i].diceVal;
 	}
 	// Sort the dice in numberical order, ascending
-	Dice.sort();
+	DiceValues.sort();
+	console.log(DiceValues[0],DiceValues[1],DiceValues[2],DiceValues[3],DiceValues[4]);
 	var total_score = 0;
 
 	//If the dice are all less than one another in numerical ascending order then you have a straight, sum dice return
-	if(DiceValues[0] < DiceValues[1] < DiceValues[2] < DiceValues[3] < DiceValues[4]){
+	var arrayOkay = true;
+	for(i=0; i<5; i++){
+		if(DiceValues[i]<DiceValues[i+1] && DiceValues[i]!==DiceValues[i+1]){
+			console.log("Dice is less than and not equal")
+		}
+		else{
+			arrayOkay = false;
+		}
+	}
+
+	if(arrayOkay = true){
 		total_score = DiceValues[0] + DiceValues[1] + DiceValues[2] + DiceValues[3] + DiceValues[4]
 		return total_score;
 	}
