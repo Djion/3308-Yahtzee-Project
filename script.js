@@ -81,33 +81,33 @@ var scoreSelection = function(selText){
     console.log(selText);
     var scoreText;
     if (selText === "Aces") {
-        scoreText = OneToSixSum(1,allDice);
+        scoreText = OneToSix_Sum(1,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Aces is " + scoreText, 30, 150);
     }
     else if(selText === "Twos"){
-        scoreText = OneToSixSum(2,allDice);
+        scoreText = OneToSix_Sum(2,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Twos is " + scoreText, 30, 150);
         
     }
     else if(selText === "Threes"){
-        scoreText = OneToSixSum(3,allDice);
+        scoreText = OneToSix_Sum(3,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Threes is " + scoreText, 30, 150);
     }
     else if(selText === "Fours"){
-        scoreText = OneToSixSum(4,allDice);
+        scoreText = OneToSix_Sum(4,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fours is " + scoreText, 30, 150);
     }
     else if(selText === "Fives"){
-        scoreText = OneToSixSum(5,allDice);
+        scoreText = OneToSix_Sum(5,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fives is " + scoreText, 30, 150);
     }
     else if(selText === "Sixes"){
-        scoreText = OneToSixSum(6,allDice);
+        scoreText = OneToSix_Sum(6,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Sixes is " + scoreText, 30, 150);
     }
