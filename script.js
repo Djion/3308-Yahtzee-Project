@@ -159,21 +159,18 @@ var scoreSelection = function(selText){
     else if(selText === "4 of a Kind"){
         scoreText = Four_OAK(allDice);
         console.log(scoreText);
-        ctx.fillText("Score for Three of a kind is " + scoreText, 30, 150);
+        ctx.fillText("Score for Four of a kind is " + scoreText, 30, 150);
     }
-    //THIS FUNCTION IS CURRENTLY BROKEN
     else if(selText === "Full House"){
         scoreText = Full_House(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Full House is " + scoreText, 30, 150);
     }
-    //THIS FUNCTION IS CURRENTLY BROKEN
     else if(selText === "Small Straight"){
         scoreText = Small_Straight(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Small Straight is " + scoreText, 30, 150);
     }
-    //THIS FUNCTION IS CURRENTLY BROKEN
     else if(selText === "Large Straight"){
         scoreText = Large_Straight(allDice);
         console.log(scoreText);
