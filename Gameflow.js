@@ -1,42 +1,83 @@
-// General gameflow for a single player on a game of yahtzee
-// This should look like
-// --TURN BEGINS--
-// 1. User rolls the dice for the first time
-// 2. User selects the dice they would like to save and the dice they would like to reroll
-// 3. User rolls the dice a second time
-// 4. User selects the dice they would like to save and the dice they would like to reroll
-// 5. User rolls the dice a final time
-// 6. User selects a scorecard option and the game gives them a score for the dice choice they have made
-// --TURN ENDS--
+// Idea for the game loop is to use a boolean value that changes when the button "roll dice"
+// Is clicked. This would mean that the turn starts, the dice are rolled and displayed
+// The player is asked to then choose which dice they would like to keep, then the o
 
-var buttonPressed = false;
+//Variable to determine if the roll dice button has been clicked
+var rollBool = false;
+//Variable to determine if a score selection has been made
+var scoreBool = false;
+//Variable to count what turn you are on, there are 13 turns per player per game
+var turnCount = 0;
+//Times the dice have been rolled in a given turn
+var diceRolls = 0;
+//Variable to do stuff with for random waiting
+var waiting = 0;
 
-var waitForIt = function(){
-	if(!buttonPressed ){
-		setTimeout(waitForIt,2500);
-	}
-	else{
-		document.getElementById() //http://stackoverflow.com/questions/2221836/how-can-i-make-a-program-wait-for-a-button-press-in-javascript
-	}
+
+//Function that will be used when the roll dice button has been clicked
+//Returns true
+var diceRoller = function(){
+    ctx.fillText("Please select the dice you would like to keep and then roll again",30,150);
+    rollBool = true;
+    return rollBool;
 }
 
-var playGame = function(){
-	var RollCounter = 0;
-    clearScreen();
-    while(scoreCounter < 13){
-        while(rollCounter < 3){
-    	   rollActiveDice();
-    	   drawDice();
-    	    //DISPLAY TEXT ROLL 1 
-            //WAIT FOR USER TO CLICK ROLL DICE
-            //USER SELECTS WHAT DICE THEY WANT
-            rollCounter++;
-        }
-    //FINAL DICE
-    //ASK USER TO SELECT A SCORE OPTION
-    //WAIT FOR SCORE OPTION
-    scourCounter++;
-    rollCounter = 0;
-    } 
+//Function that will be used when the score selection has been clicked
+//Returns true
+var scoreSelector = function(message){
+    ctx.fillText(message + "is now scored",30,150);
+    scoreBool = true;
+    return score scoreBool;
+}
 
+
+//MAIN GAME FUNCTION
+var playGame = function(){
+//Outer game loop that breaks when the turns are over
+for(turnCount < 13){
+
+    //The turn starts clear the screen
+    clearScreen();
+
+    //inner game loop that breaks when a turn finishes *IE dice has been rolled 3 times
+    for(diceRolls < 3){
+
+        //Turn starts, roll the dice
+        rollActiveDice();
+        drawDice();
+
+        //Dice have been rolled increment the dice counter
+        diceRolls++;
+
+        //Waits for the roll button to be clicked
+        //NOTE THIS STILL NEEDS TO BE IMPLEMENTED IN THE SCRIPT.JS FOR WHEN THE BUTTON IS CLICKED
+        while(rollBool === false){
+            waiting = 0;
+            }
+
+        //Sets the rollbool back to false so the waiting loop can be triggered again
+        rollBool = false;
+        }
+
+    //We exit the inner loop and at this point the dice have been rolled 3 times, 
+    //What we are left with is the dice the player will use for scoring
+
+    //Ask the player to make a score selection
+    ctx.fillText("Please make a score selection for these dice", 30, 150);
+    
+    //Loop to see if a score has been selected
+    //NOTE THIS STILL NEEDS TO BE IMPLEMENTED IN THE SCRIPT.JS FOR WHEN A SCORE IS CHOSEN
+    while(scoreBool === false){
+        waiting = 0;
+    }
+
+    //A score selection has been chosen and the turn can now end
+    //Increment the turn counter
+    turnCount++;
+
+}
+
+//Clear the screen and print game over
+clearScreen();
+ctx.fillText("GAME OVER", 30, 150);
 }
