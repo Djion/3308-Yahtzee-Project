@@ -24,8 +24,8 @@ Dice.prototype.loc = function() {
     var loc = {};
     loc['startX'] = 16 + 64 * (this.diceNum - 1);
     loc['startY'] = (this.isActive) ? 16 : 80;
-    loc['endX'] = loc['startX'] + this.diceDimen;
-    loc['endY'] = loc['startY'] + this.diceDimen;
+    loc['endX'] = loc['startX'] + this.dimen;
+    loc['endY'] = loc['startY'] + this.dimen;
 
     return loc;
 }
@@ -48,6 +48,10 @@ Dice.prototype.draw = function() {
     );
 }
 
+Dice.prototype.toggle = function() {
+    this.isActive = (this.isActive) ? false : true;
+}
+
 // Setup the game
 $(document).ready(function() {
     c = $("#yahtzee")[0];
@@ -68,7 +72,33 @@ $(document).ready(function() {
         var selText = $(this).text(); 
         scoreSelection(selText);
     });
+
+    $('#yahtzee').click(function(e) {
+        // Get X,Y coordinates of click relative to the canvas
+        var x = e.pageX - $(this).offset().left;
+        var y = e.pageY - $(this).offset().top;
+
+        console.log("(X,Y) (" + x + ", " + y + ")");
+        checkDiceClick(x, y);
+    });
 });
+
+var checkDiceClick = function(x, y) {
+    for (var i = 0; i < allDice.length; ++i) {
+        var die = allDice[i];
+        loc = die.loc();
+        if ( x >= loc['startX']
+            && x <= loc['endX']
+            && y >= loc['startY']
+            && y <= loc['endY']) {
+            die.toggle();
+        
+            clearScreen();
+            drawDice();
+            break;
+        }
+    }
+}
 
 // Clears the canvas for redrawing
 var clearScreen = function() {
@@ -99,8 +129,7 @@ var scoreSelection = function(selText){
     else if(selText === "Twos"){
         scoreText = OneToSix_Sum(2,allDice);
         console.log(scoreText);
-        ctx.fillText("Score for Twos is " + scoreText, 30, 150);
-        
+        ctx.fillText("Score for Twos is " + scoreText, 30, 150);    
     }
     else if(selText === "Threes"){
         scoreText = OneToSix_Sum(3,allDice);
