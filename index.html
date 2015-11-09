@@ -1,150 +1,152 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>CUCS - Yahtzee</title>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link href="css/style.css" rel="stylesheet">
-        <!-- Jquery -->
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <!-- Dropdown menu-->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <!-- Scorecard Functions -->
-        <script src="OneToSix_Sum.js"></script>
-        <!-- Our Code-->
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div class="wrapper">
-            <h1>CUCS - Yahtzee</h1>
-            <canvas id="yahtzee" width="480" height="480"></canvas>
-
-            <table>
-              <tr>
-                <th>Upper section</th>
-                <th>How To Score</th>
-                <th></th>
-              </tr>
-              <tr>
-                <td>Aces</td>
-                <td>Count and Add Only Aces</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Twos</td>
-                <td>Count and Add Only Twos</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Threes</td>
-                <td>Count and Add Only Threes</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Fours</td>
-                <td>Count and Add Only Fours</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Fives</td>
-                <td>Count and Add Only Fives</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Sixes</td>
-                <td>Count and Add Only Sixes</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Total Score</td>
-                <td>-&gt;</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Bonus (If total score is 63 or over)</td>
-                <td>Score 35</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Total (Of Upper Section)</td>
-                <td>-&gt;</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td colspan="3">Lower Section</td>
-              </tr>
-              <tr>
-                <td>3 of a kind</td>
-                <td>Add Total of All Dice</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>4 of a kind</td>
-                <td>Add Total Of All Dice</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Full House</td>
-                <td>Score 25</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Sm. Straight (Sequence of 4)</td>
-                <td>Score 30</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Lg. Straight (Sequence of 5)</td>
-                <td>Score 40</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Yahtzee (5 of a kind)</td>
-                <td>Score 50</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Chance<br>Yahtzee Bonus</td>
-                <td>Score Total of All Dice</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td colspan="2">Total (Of Lower Section)</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td colspan="2">Total (Of Upper Section)</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td colspan="2">Grand Total</td>
-                <td></td>
-              </tr>
-            </table>
-            
-            <!-- Simple button to roll the dice -->
-            <button id="rollButton">Roll Dice</button>
-        
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="scoreMenu" data-toggle="dropdown">Scoring
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="scoreMenu">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Aces</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Twos</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Threes</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fours</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fives</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sixes</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 of a Kind</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 of a Kind</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Full House</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Small Straight</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Large Straight</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Yahtzee!</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chance</a></li>
-                <!-- Can use a disabled class to take away selections once they have been chosen http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_comp_dropdown_disabled&stacked=h-->
-                </ul>
-            </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>CUCS - Yahtzee</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Dropdown menu-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Scorecard Functions -->
+    <script src="OneToSix_Sum.js"></script>
+    <!-- Our Code-->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CUCS - Yahtzee</h1>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <canvas id="yahtzee" width="480" height="480"></canvas>
+          <!-- Simple button to roll the dice -->
+          <button id="rollButton">Roll Dice</button>
+      
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="scoreMenu" data-toggle="dropdown">Scoring
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="scoreMenu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Aces</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Twos</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Threes</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fours</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fives</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sixes</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 of a Kind</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 of a Kind</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Full House</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Small Straight</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Large Straight</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Yahtzee!</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chance</a></li>
+            <!-- Can use a disabled class to take away selections once they have been chosen http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_comp_dropdown_disabled&stacked=h-->
+            </ul>
+          </div>
         </div>
-    </body>
+        <div class="col-md-6 col-xs-12">
+          <table>
+            <tr>
+              <th>Upper section</th>
+              <th>How To Score</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td>Aces</td>
+              <td>Count and Add Only Aces</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Twos</td>
+              <td>Count and Add Only Twos</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Threes</td>
+              <td>Count and Add Only Threes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Fours</td>
+              <td>Count and Add Only Fours</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Fives</td>
+              <td>Count and Add Only Fives</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Sixes</td>
+              <td>Count and Add Only Sixes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">Total Score</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Bonus (If total score is 63 or over)</td>
+              <td>Score 35</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">Total (Of Upper Section)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Lower Section</strong></td>
+            </tr>
+            <tr>
+              <td>3 of a kind</td>
+              <td>Add Total of All Dice</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4 of a kind</td>
+              <td>Add Total Of All Dice</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Full House</td>
+              <td>Score 25</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Sm. Straight (Sequence of 4)</td>
+              <td>Score 30</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Lg. Straight (Sequence of 5)</td>
+              <td>Score 40</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Yahtzee (5 of a kind)</td>
+              <td>Score 50</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Chance<br>Yahtzee Bonus</td>
+              <td>Score Total of All Dice</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">Total (Of Lower Section)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">Total (Of Upper Section)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">Grand Total</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

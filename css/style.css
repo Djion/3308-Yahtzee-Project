@@ -1,3 +1,7 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #02779E;
 }
@@ -16,6 +20,10 @@ body {
 table { 
 	display: inline-block;
 	margin-left: 20px;
+}
+
+th {
+	padding: 0 5px;
 }
 
 tr, td {

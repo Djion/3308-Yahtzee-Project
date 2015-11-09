@@ -34,7 +34,18 @@ Dice.prototype.loc = function() {
 Dice.prototype.draw = function() {
     var imgDiceDimen = 128;
     loc = this.loc();
-    ctx.drawImage(diceImg, (this.diceVal - 1) * imgDiceDimen, 0, imgDiceDimen, imgDiceDimen, loc['startX'], loc['startY'], this.dimen, this.dimen);
+
+    ctx.drawImage(
+        diceImg, 
+        (this.diceVal - 1) * imgDiceDimen, 
+        0, 
+        imgDiceDimen, 
+        imgDiceDimen, 
+        loc['startX'], 
+        loc['startY'], 
+        this.dimen, 
+        this.dimen
+    );
 }
 
 // Setup the game
