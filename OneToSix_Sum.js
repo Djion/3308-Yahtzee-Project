@@ -6,7 +6,7 @@
 
 //Function to return the scorecard options of 1 - 6
 //Variables : c = integer 1-6
-//			  Dice = an array of dice
+//Dice = an array of dice
 var OneToSix_Sum = function(c,Dice)
 {
     var total_score = 0;
