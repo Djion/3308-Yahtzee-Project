@@ -6,7 +6,7 @@
 
 //Function to return the scorecard options of 1 - 6
 //Variables : c = integer 1-6
-//			  Dice = an array of dice
+//Dice = an array of dice
 var OneToSix_Sum = function(c,Dice)
 {
     var total_score = 0;
@@ -164,7 +164,7 @@ var Five_OAK = function(Dice)
 	var total_score = 0;
 
 	//Checks if 5 dice are equal
-	if(Dice[0].diceval === Dice[1].diceVal && Dice[0].diceVal === Dice[2].diceVal && Dice[0].diceVal=== Dice[3].diceVal && Dice[0].diceVal=== Dice[4].diceVal){
+	if((Dice[0].diceVal == Dice[1].diceVal) && (Dice[0].diceVal == Dice[2].diceVal) && (Dice[0].diceVal == Dice[3].diceVal) && (Dice[0].diceVal == Dice[4].diceVal)){
 		total_score = 50;
 		return total_score;
 	}

@@ -91,16 +91,19 @@ var Full_House = function(Dice)
 	var full = 0;
 	var total_score = 0;
 	//This array is to store the number of dice that are the same. If the passed array is 1,1,2,2,4 the numbers array will read 2,2,0,1,0
-	var numbers = [0,0,0,0,0];
+	var numbers = [0,0,0,0,0,0];
 	// Creates the values for the Numbers array explained above
-	for(i = 0; i < 5; i++){
-		for(k = 0; k < 5; k++){
+	for(i = 0; i < 6; i++){
+		for(k = 0; k < 6; k++){
 			if(i+1 === Dice[k].diceVal){
 				numbers[i] = numbers[i] + 1;
 			}
 		}
 	}
 	
+3, 3, 3, 2, 2
+0,2,3,0,0,0
+
 	// Looks at the array of numbers for a 3 of a kind
 	for(i = 0; i < 5; i++)
 	{
