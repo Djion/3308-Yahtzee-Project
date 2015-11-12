@@ -92,7 +92,7 @@ var checkDiceClick = function(x, y) {
             && y >= loc['startY']
             && y <= loc['endY']) {
             die.toggle();
-        
+
             clearScreen();
             drawDice();
             break;
