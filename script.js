@@ -120,71 +120,85 @@ var rollActiveDice = function() {
 
 var scoreSelection = function(selText){
     console.log(selText);
+    clearScreen();
     var scoreText;
     if (selText === "Aces") {
         scoreText = OneToSix_Sum(1,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Aces is " + scoreText, 30, 150);
+	$("#ace_score").text(scoreText);
     }
     else if(selText === "Twos"){
         scoreText = OneToSix_Sum(2,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Twos is " + scoreText, 30, 150);    
+	$("#2_score").text(scoreText);
     }
     else if(selText === "Threes"){
         scoreText = OneToSix_Sum(3,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Threes is " + scoreText, 30, 150);
+	$("#3_score").text(scoreText);
     }
     else if(selText === "Fours"){
         scoreText = OneToSix_Sum(4,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fours is " + scoreText, 30, 150);
+	$("#4_score").text(scoreText);
     }
     else if(selText === "Fives"){
         scoreText = OneToSix_Sum(5,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fives is " + scoreText, 30, 150);
+	$("#5_score").text(scoreText);
     }
     else if(selText === "Sixes"){
         scoreText = OneToSix_Sum(6,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Sixes is " + scoreText, 30, 150);
+	$("#6_score").text(scoreText);
     }
     else if(selText === "3 of a Kind"){
         scoreText = Three_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Three of a kind is " + scoreText, 30, 150);
+	$("#3_kind_score").text(scoreText);
     }
     else if(selText === "4 of a Kind"){
         scoreText = Four_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Four of a kind is " + scoreText, 30, 150);
+	$("#4_kind_score").text(scoreText);
     }
     else if(selText === "Full House"){
         scoreText = Full_House(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Full House is " + scoreText, 30, 150);
+	$("#full_house_score").text(scoreText);
     }
     else if(selText === "Small Straight"){
         scoreText = Small_Straight(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Small Straight is " + scoreText, 30, 150);
+	$("#sm_straight_score").text(scoreText);
     }
     else if(selText === "Large Straight"){
         scoreText = Large_Straight(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Large Straight is " + scoreText, 30, 150);
+	$("#lg_straight_score").text(scoreText);
     }
     else if(selText === "Yahtzee!"){
         scoreText = Five_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Yahtzee! is " + scoreText, 30, 150);
+	$("#yahtzee_score").text(scoreText);
     }
     else if(selText === "Chance"){
         scoreText = Chance(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Chance is " + scoreText, 30, 150);
+	$("#chance_bonus_score").text(scoreText);
     }
 }
 
