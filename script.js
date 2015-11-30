@@ -218,13 +218,24 @@ var scoreSelection = function(selText){
 }
 
 var playGame = function(){
-    clearScreen();
+    if(rollCounter < 3){
+        clearScreen();
 
-    // Setting the dice
-    rollActiveDice();
+        // Setting the dice
+        rollActiveDice();
 
-    //Disply the rolled dice to the screen
-    drawDice();
+        //Disply the rolled dice to the screen
+        drawDice();
 
-    rollCounter++;
+        rollCounter++;
+    }
+    else{
+        ctx.fillText("Please make a score selection", 30, 150);
+        for(i = 0; i < 5; i++)
+        {
+            allDice[i].isActive = true;
+        }
+        rollCounter = 0;
+    }
+
 }
