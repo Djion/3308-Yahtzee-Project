@@ -171,3 +171,10 @@ var Five_OAK = function(Dice)
 
 	return total_score;	
 }
+
+var Chance = function(Dice)
+{
+	var total_score = 0;
+	total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
+	return total_score;
+}

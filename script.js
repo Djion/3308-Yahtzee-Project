@@ -6,6 +6,8 @@ var ctx;
 var allDice = [];
 var diceImg;
 
+var rollCounter = 0;
+
 // class Dice
 var Dice = function(diceNum, isActive) {
     this.diceNum = diceNum;
@@ -126,79 +128,92 @@ var scoreSelection = function(selText){
         scoreText = OneToSix_Sum(1,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Aces is " + scoreText, 30, 150);
-	$("#ace_score").text(scoreText);
+        $('#aces').addClass('disabled', true);
+	    $("#ace_score").text(scoreText);
     }
     else if(selText === "Twos"){
         scoreText = OneToSix_Sum(2,allDice);
         console.log(scoreText);
-        ctx.fillText("Score for Twos is " + scoreText, 30, 150);    
-	$("#2_score").text(scoreText);
+        ctx.fillText("Score for Twos is " + scoreText, 30, 150);  
+        $('#twos').addClass('disabled', true);  
+	   $("#2_score").text(scoreText);
     }
     else if(selText === "Threes"){
         scoreText = OneToSix_Sum(3,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Threes is " + scoreText, 30, 150);
-	$("#3_score").text(scoreText);
+        $('#threes').addClass('disabled', true);
+	   $("#3_score").text(scoreText);
     }
     else if(selText === "Fours"){
         scoreText = OneToSix_Sum(4,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fours is " + scoreText, 30, 150);
-	$("#4_score").text(scoreText);
+        $('#fours').addClass('disabled', true);
+	   $("#4_score").text(scoreText);
     }
     else if(selText === "Fives"){
         scoreText = OneToSix_Sum(5,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Fives is " + scoreText, 30, 150);
-	$("#5_score").text(scoreText);
+        $('#fives').addClass('disabled', true);
+	   $("#5_score").text(scoreText);
     }
     else if(selText === "Sixes"){
         scoreText = OneToSix_Sum(6,allDice);
         console.log(scoreText);
         ctx.fillText("Score for Sixes is " + scoreText, 30, 150);
-	$("#6_score").text(scoreText);
+        $('#sixes').addClass('disabled', true);
+	   $("#6_score").text(scoreText);
     }
     else if(selText === "3 of a Kind"){
         scoreText = Three_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Three of a kind is " + scoreText, 30, 150);
-	$("#3_kind_score").text(scoreText);
+        $('#3ofkind').addClass('disabled', true);
+	   $("#3_kind_score").text(scoreText);
     }
     else if(selText === "4 of a Kind"){
         scoreText = Four_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Four of a kind is " + scoreText, 30, 150);
-	$("#4_kind_score").text(scoreText);
+        $('#4ofkind').addClass('disabled', true);
+	   $("#4_kind_score").text(scoreText);
     }
     else if(selText === "Full House"){
         scoreText = Full_House(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Full House is " + scoreText, 30, 150);
-	$("#full_house_score").text(scoreText);
+        $('#fullHouse').addClass('disabled', true);
+	   $("#full_house_score").text(scoreText);
     }
     else if(selText === "Small Straight"){
         scoreText = Small_Straight(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Small Straight is " + scoreText, 30, 150);
-	$("#sm_straight_score").text(scoreText);
+        $('#smallStraight').addClass('disabled', true);
+	   $("#sm_straight_score").text(scoreText);
     }
     else if(selText === "Large Straight"){
         scoreText = Large_Straight(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Large Straight is " + scoreText, 30, 150);
-	$("#lg_straight_score").text(scoreText);
+        $('#largeStraight').addClass('disabled', true);
+	   $("#lg_straight_score").text(scoreText);
     }
     else if(selText === "Yahtzee!"){
         scoreText = Five_OAK(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Yahtzee! is " + scoreText, 30, 150);
-	$("#yahtzee_score").text(scoreText);
+        $('#yahtzeeScore').addClass('disabled', true);
+	   $("#yahtzee_score").text(scoreText);
     }
     else if(selText === "Chance"){
         scoreText = Chance(allDice);
         console.log(scoreText);
         ctx.fillText("Score for Chance is " + scoreText, 30, 150);
-	$("#chance_bonus_score").text(scoreText);
+        $('#chanceScore').addClass('disabled', true);
+	   $("#chance_bonus_score").text(scoreText);
     }
 }
 
@@ -210,4 +225,6 @@ var playGame = function(){
 
     //Disply the rolled dice to the screen
     drawDice();
+
+    rollCounter++;
 }
