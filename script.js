@@ -8,6 +8,13 @@ var diceImg;
 
 var rollCounter = 0;
 var ifSelected = false;
+var turnNumber = 0;
+var grandTotal = 0;
+var totalSingles = 0;
+var totalUpper = 0;
+var totalUpper2 = 0;
+var totalLower = 0;
+var bonusScore = 0;
 
 // class Dice
 var Dice = function(diceNum, isActive) {
@@ -132,6 +139,36 @@ var scoreSelection = function(selText){
         ctx.fillText("Aces score " + scoreText, 50,150);
         $('#aces').addClass('disabled', true);
 	    $("#ace_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+        
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+
+        //Checking turn number
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Twos"){
         scoreText = OneToSix_Sum(2,allDice);
@@ -139,7 +176,36 @@ var scoreSelection = function(selText){
         ifSelected = true;
         ctx.fillText("Twos score " + scoreText, 50,150);
         $('#twos').addClass('disabled', true);  
-	   $("#2_score").text(scoreText);
+	    $("#2_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Threes"){
         scoreText = OneToSix_Sum(3,allDice);
@@ -147,7 +213,36 @@ var scoreSelection = function(selText){
         ifSelected = true;
         ctx.fillText("Threes score " + scoreText, 50,150);
         $('#threes').addClass('disabled', true);
-	   $("#3_score").text(scoreText);
+	    $("#3_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+        
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Fours"){
         scoreText = OneToSix_Sum(4,allDice);
@@ -155,7 +250,36 @@ var scoreSelection = function(selText){
         ifSelected = true;
         ctx.fillText("Fours score " + scoreText, 50,150);
         $('#fours').addClass('disabled', true);
-	   $("#4_score").text(scoreText);
+	    $("#4_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+       
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+        
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Fives"){
         scoreText = OneToSix_Sum(5,allDice);
@@ -163,7 +287,36 @@ var scoreSelection = function(selText){
         ifSelected = true;
         ctx.fillText("Fives score " + scoreText, 50,150);
         $('#fives').addClass('disabled', true);
-	   $("#5_score").text(scoreText);
+	    $("#5_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+         
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+        
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Sixes"){
         scoreText = OneToSix_Sum(6,allDice);
@@ -171,7 +324,36 @@ var scoreSelection = function(selText){
         ifSelected = true;
         ctx.fillText("Sixes score " + scoreText, 50,150);
         $('#sixes').addClass('disabled', true);
-	   $("#6_score").text(scoreText);
+	    $("#6_score").text(scoreText);
+        turnNumber++;
+        console.log("Turn Number " + turnNumber);
+        
+        //Changing scoreboard extra fields
+        grandTotal += scoreText;
+        totalSingles += scoreText;
+        $("#total_singles_score").text(totalSingles);
+        if(totalSingles >= 63){
+            $("#bonus_score").text(63);
+            grandTotal += 35;
+            bonusScore = 35;
+        }
+        else{
+            $("#bonus_score").text(0);
+        }
+        $("#grand_total_score").text(grandTotal);
+
+        totalUpper = (totalSingles + bonusScore);
+        $("#total_upper_score").text(totalUpper);
+        $("total_upper_score2").text(totalUpper);
+        
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "3 of a Kind"){
         scoreText = Three_OAK(allDice);
@@ -180,6 +362,18 @@ var scoreSelection = function(selText){
         ctx.fillText("3 of a kind score " + scoreText, 50,150);
         $('#3ofkind').addClass('disabled', true);
 	   $("#3_kind_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "4 of a Kind"){
         scoreText = Four_OAK(allDice);
@@ -188,6 +382,18 @@ var scoreSelection = function(selText){
         ctx.fillText("4 of a kind score " + scoreText, 50,150);
         $('#4ofkind').addClass('disabled', true);
 	   $("#4_kind_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Full House"){
         scoreText = Full_House(allDice);
@@ -196,6 +402,18 @@ var scoreSelection = function(selText){
         ctx.fillText("Full house score " + scoreText, 50,150);
         $('#fullHouse').addClass('disabled', true);
 	   $("#full_house_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Small Straight"){
         scoreText = Small_Straight(allDice);
@@ -204,6 +422,18 @@ var scoreSelection = function(selText){
         ctx.fillText("Small Straight score " + scoreText, 50,150);
         $('#smallStraight').addClass('disabled', true);
 	   $("#sm_straight_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Large Straight"){
         scoreText = Large_Straight(allDice);
@@ -212,6 +442,18 @@ var scoreSelection = function(selText){
         ctx.fillText("Large Straight score " + scoreText, 50,150);
         $('#largeStraight').addClass('disabled', true);
 	   $("#lg_straight_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Yahtzee!"){
         scoreText = Five_OAK(allDice);
@@ -220,6 +462,18 @@ var scoreSelection = function(selText){
         ctx.fillText("Yahtzee score " + scoreText, 50,150);
         $('#yahtzeeScore').addClass('disabled', true);
 	   $("#yahtzee_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
     else if(selText === "Chance"){
         scoreText = Chance(allDice);
@@ -228,6 +482,18 @@ var scoreSelection = function(selText){
         ctx.fillText("Chance score " + scoreText, 50,150);
         $('#chanceScore').addClass('disabled', true);
 	   $("#chance_bonus_score").text(scoreText);
+       turnNumber++;
+       console.log("Turn Number " + turnNumber);
+       grandTotal += scoreText;
+        $("#grand_total_score").text(grandTotal);
+        if(turnNumber === 13){
+            clearScreen();
+            ctx.fillText("GAME OVER",30,150);
+            ctx.fillText("TOTAL SCORE = " + grandTotal,30,200);
+        }
+        else{
+            clearScreen();
+        }
     }
 
 }
@@ -258,5 +524,6 @@ var playGame = function(){
             rollCounter = 3;
         }
     }
+
 
 }
