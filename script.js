@@ -101,6 +101,9 @@ var checkDiceClick = function(x, y) {
 
             clearScreen();
             drawDice();
+			if (rollCounter >= 3)
+				ctx.fillText("Please make a score selection", 16, 166);
+
             break;
         }
     }
@@ -199,25 +202,20 @@ var scoreSelection = function(scoreElement){
 		allDice[i].isActive = true;
 	
 	if (turnNumber === 13) {
-		ctx.fillText("GAME OVER", 30, 150);
-		ctx.fillText("TOTAL SCORE = " + grandTotal, 30, 200);
+		ctx.fillText("GAME OVER", 16, 36);
+		ctx.fillText("TOTAL SCORE = " + grandTotal, 16, 96);
 	}
 }
 	
 
 var playGame = function(){
+	clearScreen();
     if(rollCounter < 3){
-        clearScreen();
-
-        // Setting the dice
         rollActiveDice();
-
-        //Disply the rolled dice to the screen
-        drawDice();
-
         rollCounter++;
     }
     else{
-        ctx.fillText("Please make a score selection", 30, 150);
+        ctx.fillText("Please make a score selection", 16, 166);
     }
+	drawDice();
 }
