@@ -7,7 +7,11 @@ var allDice = [];
 var diceImg;
 
 var rollCounter = 0;
-var ifSelected = false;
+var turnNumber = 0;
+var grandTotal = 0;
+var totalSingles = 0;
+var totalUpper = 0;
+var totalLower = 0;
 
 // class Dice
 var Dice = function(diceNum, isActive) {
@@ -120,6 +124,49 @@ var rollActiveDice = function() {
             allDice[i].diceRoll();
 }
 
+
+var totalScores = function() {
+	var tds = ["1_score", "2_score", "3_score", "4_score", "5_score", "6_score",
+		"3_kind_score", "4_kind_score", "full_house_score", "sm_straight_score", "lg_straight_score",
+		"yahtzee_score", "chance_bonus_score"];
+
+	var sum = 0;
+
+	for (var i = 0; i < tds.length; ++i) {
+		var num = parseInt($("#" + tds[i]).text());
+		if (! isNaN(num))
+			sum += num;
+
+		if (i === 5) {
+			totalSingles = sum;
+			sum = 0;
+		}
+	}
+
+	totalLower = sum;
+	if (totalSingles != 0)
+		$("#total_singles_score").text(totalSingles);
+	
+	if ( totalSingles >= 63 ) {
+		$("#bonus_score").text = 35;
+		totalUpper = totalSingles + 35;	
+	} else {
+		$("#bonus_score").text = 0;
+		totalUpper = totalSingles;
+	}
+	
+	if (totalUpper != 0) {
+		$("#total_upper_score").text(totalUpper);
+		$("#total_upper_score2").text(totalUpper);
+	}
+
+	if (totalLower != 0)
+		$("#total_lower_score").text(totalLower);
+	
+	grandTotal = totalUpper + totalLower;
+	$("#grand_total_score").text(grandTotal);
+}
+
 var scoreSelection = function(scoreElement){
 	scoreElement.addClass("disabled", true);
     clearScreen();
@@ -137,20 +184,26 @@ var scoreSelection = function(scoreElement){
 
 	if (scoreFuncNum > 0 && scoreFuncNum <= 6) {
 		$("#" + scoreFuncNum + "_score").text(OneToSix_Sum(scoreFuncNum, allDice));
-		return;
+	} else {
+		scoreFuncNum -= 7;
+
+		var scoreTd = scoreData[scoreFuncNum][0];
+		var score = scoreData[scoreFuncNum][1]();
+		$(scoreTd).text(score);
 	}
 
-	scoreFuncNum -= 7;
-
-	var scoreTd = scoreData[scoreFuncNum][0];
-	var score = scoreData[scoreFuncNum][1]();
-	console.log(score);
-	$(scoreTd).text(score);
-
 	rollCounter = 0;
+	turnNumber++;
+	totalScores();
 	for (var i = 0; i < allDice.length; ++i)
 		allDice[i].isActive = true;
+	
+	if (turnNumber === 13) {
+		ctx.fillText("GAME OVER", 30, 150);
+		ctx.fillText("TOTAL SCORE = " + grandTotal, 30, 200);
+	}
 }
+	
 
 var playGame = function(){
     if(rollCounter < 3){
