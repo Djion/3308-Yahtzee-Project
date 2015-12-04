@@ -1,13 +1,17 @@
-//This file Contains all of the function related to the scorecard. 
-//They will return a value for the chosen selection for scoring
-//Such as 2's, three of a kind, or straight
+/**
+ * @file Score calculator for each scoring method
+ * @author Alex Ring, David Zhuzhunashvili, Robert Allen
+ */
 
 
-
-//Function to return the scorecard options of 1 - 6
-//Variables : c = integer 1-6
-//Dice = an array of dice
-var OneToSix_Sum = function(c,Dice)
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.
+ *@return total_score - The score calculated based on the function's description 
+ */
+var OneToSix_Sum = function(c, Dice)
 {
     var total_score = 0;
     // Looks at the array of dice and compares it to the variable c
@@ -19,8 +23,12 @@ var OneToSix_Sum = function(c,Dice)
     return total_score;
 }
 
-//Function to return the scorecard option for Small Straight (A small straight is any 4 dice that are in numerical order)
-//Variables : Dice = an array of dice
+/**
+ *@function Small_Straight
+ *@description Returns 30 if there are 3 numbers in a row or 0 if .
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Small_Straight = function(Dice)
 {
 	var total_score = 0;
@@ -46,8 +54,12 @@ var Small_Straight = function(Dice)
 	return total_score;
 }
 
-//Function to return the scorecard option for Large Straight (A large straight is any 5 dice that are in numberical order)
-//Variables : Dice = an array of dice
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Large_Straight = function(Dice)
 {
 	var total_score = 0;
@@ -71,8 +83,12 @@ var Large_Straight = function(Dice)
 	return total_score;
 }
 
-//Function to return the scorecard option for Full House (A full house is when you have three of one number and 2 of another number example : 2,2,3,3,3)
-//Variables : Dice = an array of dice
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Full_House = function(Dice)
 {
 	var total_score = 0;
@@ -106,8 +122,12 @@ var Full_House = function(Dice)
 
 }
 
-//Function to return the scorecard option for Three of A kind
-//Variables : Dice = an array of dice
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Three_OAK = function(Dice)
 {
 	var total_score = 0;
@@ -132,8 +152,12 @@ var Three_OAK = function(Dice)
 
 }
 
-//Function to return the scorecard option for Four of A Kind
-//Variables : Dice = an array of dice
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Four_OAK = function(Dice)
 {
 	var total_score = 0;
@@ -157,8 +181,12 @@ var Four_OAK = function(Dice)
 	return total_score;
 }
 
-//Function to return the scorecard option for Five of A Kind
-// Variables : Dice = an array of dice
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Five_OAK = function(Dice)
 {
 	var total_score = 0;
@@ -172,6 +200,12 @@ var Five_OAK = function(Dice)
 	return total_score;	
 }
 
+/**
+ *@function OneToSix_Sum
+ *@description Returns the the sum of all the dice with the given value c.
+ *@param c - An integer from 1 to 6.
+ *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ */
 var Chance = function(Dice)
 {
 	var total_score = 0;
