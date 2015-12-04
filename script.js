@@ -204,6 +204,7 @@ var scoreSelection = function(scoreElement){
 	if (turnNumber === 13) {
 		ctx.fillText("GAME OVER", 16, 36);
 		ctx.fillText("TOTAL SCORE = " + grandTotal, 16, 96);
+        $("#rollButton").prop('disabled', true);
 	}
 }
 	
