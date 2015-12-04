@@ -1,8 +1,8 @@
-/*
+/**
  * @file Yahtzee script, makes the game work
  * @author Alex Ring, David Zhuzhunashvili, Robert Allen
  * @version 1.1
-*/
+ */
 var c;
 var ctx;
 

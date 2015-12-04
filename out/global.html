@@ -101,7 +101,7 @@
 
     
 
-    <h4 class="name" id="Chance"><span class="type-signature"></span>Chance<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="chance"><span class="type-signature"></span>chance<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -196,7 +196,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line203">line 203</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line197">line 197</a>
     </li></ul></dd>
     
 
@@ -249,7 +249,489 @@
 
     
 
-    <h4 class="name" id="Five_OAK"><span class="type-signature"></span>Five_OAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="checkDiceClick"><span class="type-signature"></span>checkDiceClick<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Checks where the user clicks
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">x coordinate</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">y coordinate</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="clearScreen"><span class="type-signature"></span>clearScreen<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Clears the canvas for redrawing
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line141">line 141</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="diceRoll"><span class="type-signature"></span>diceRoll<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Creates a function on all dice objects called diceRoll
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Draw"><span class="type-signature"></span>Draw<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Draws a dice at the correct location with the correct image
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line53">line 53</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="drawDice"><span class="type-signature"></span>drawDice<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Draws image associated with diceVal at location given by diceNum
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line149">line 149</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="fiveOAK"><span class="type-signature"></span>fiveOAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -344,7 +826,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line184">line 184</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line179">line 179</a>
     </li></ul></dd>
     
 
@@ -397,7 +879,7 @@
 
     
 
-    <h4 class="name" id="Four_OAK"><span class="type-signature"></span>Four_OAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="fourOAK"><span class="type-signature"></span>fourOAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -492,7 +974,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line155">line 155</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line151">line 151</a>
     </li></ul></dd>
     
 
@@ -545,7 +1027,7 @@
 
     
 
-    <h4 class="name" id="Full_House"><span class="type-signature"></span>Full_House<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="fullHouse"><span class="type-signature"></span>fullHouse<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -640,7 +1122,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line86">line 86</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -693,7 +1175,7 @@
 
     
 
-    <h4 class="name" id="Large_Straight"><span class="type-signature"></span>Large_Straight<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="largeStraight"><span class="type-signature"></span>largeStraight<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -788,7 +1270,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line57">line 57</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -841,7 +1323,89 @@
 
     
 
-    <h4 class="name" id="OneToSix_Sum"><span class="type-signature"></span>OneToSix_Sum<span class="signature">(c, Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="loc"><span class="type-signature"></span>loc<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    will give the coordinate box of a dice on the canvas
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="oneToSixSum"><span class="type-signature"></span>oneToSixSum<span class="signature">(c, Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -959,7 +1523,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line7">line 7</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -1012,7 +1576,384 @@
 
     
 
-    <h4 class="name" id="Small_Straight"><span class="type-signature"></span>Small_Straight<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="playGame"><span class="type-signature"></span>playGame<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Runs when dice is rolled, controls game flow
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line258">line 258</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="ready"><span class="type-signature"></span>ready<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Setup the game
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="rollActiveDice"><span class="type-signature"></span>rollActiveDice<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Rolls the active dice
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="scoreSelction"><span class="type-signature"></span>scoreSelction<span class="signature">(scoreElement)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Takes users score choice and runs correct score function, updates scorecard values, increments turn
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>scoreElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">score option user chose</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line214">line 214</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="smallStraight"><span class="type-signature"></span>smallStraight<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -1107,7 +2048,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line26">line 26</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -1160,7 +2101,7 @@
 
     
 
-    <h4 class="name" id="Three_OAK"><span class="type-signature"></span>Three_OAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
+    <h4 class="name" id="threeOAK"><span class="type-signature"></span>threeOAK<span class="signature">(Dice)</span><span class="type-signature"> &rarr; {int}</span></h4>
 
     
 
@@ -1255,7 +2196,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="OneToSix_Sum.js.html">OneToSix_Sum.js</a>, <a href="OneToSix_Sum.js.html#line125">line 125</a>
+        <a href="scoring.js.html">scoring.js</a>, <a href="scoring.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -1304,6 +2245,170 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="Toggle"><span class="type-signature"></span>Toggle<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Toggles the dice active on/off
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line74">line 74</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="totalScores"><span class="type-signature"></span>totalScores<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Updates the scorecard with total scores for upper, lower, grand, ect.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1319,13 +2424,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Chance">Chance</a></li><li><a href="global.html#Five_OAK">Five_OAK</a></li><li><a href="global.html#Four_OAK">Four_OAK</a></li><li><a href="global.html#Full_House">Full_House</a></li><li><a href="global.html#Large_Straight">Large_Straight</a></li><li><a href="global.html#OneToSix_Sum">OneToSix_Sum</a></li><li><a href="global.html#Small_Straight">Small_Straight</a></li><li><a href="global.html#Three_OAK">Three_OAK</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Dice.html">Dice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chance">chance</a></li><li><a href="global.html#checkDiceClick">checkDiceClick</a></li><li><a href="global.html#clearScreen">clearScreen</a></li><li><a href="global.html#diceRoll">diceRoll</a></li><li><a href="global.html#Draw">Draw</a></li><li><a href="global.html#drawDice">drawDice</a></li><li><a href="global.html#fiveOAK">fiveOAK</a></li><li><a href="global.html#fourOAK">fourOAK</a></li><li><a href="global.html#fullHouse">fullHouse</a></li><li><a href="global.html#largeStraight">largeStraight</a></li><li><a href="global.html#loc">loc</a></li><li><a href="global.html#oneToSixSum">oneToSixSum</a></li><li><a href="global.html#playGame">playGame</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#rollActiveDice">rollActiveDice</a></li><li><a href="global.html#scoreSelction">scoreSelction</a></li><li><a href="global.html#smallStraight">smallStraight</a></li><li><a href="global.html#threeOAK">threeOAK</a></li><li><a href="global.html#Toggle">Toggle</a></li><li><a href="global.html#totalScores">totalScores</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Dec 04 2015 14:23:01 GMT-0700 (MST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Dec 04 2015 14:34:00 GMT-0700 (MST)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scoring.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scoring.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @file Score calculator for each scoring method
  * @author Alex Ring, David Zhuzhunashvili, Robert Allen
  * @version 1.2.3
@@ -15,7 +43,7 @@
 var oneToSixSum = function(c, Dice) {
     var total_score = 0;
     // Looks at the array of dice and compares it to the variable c
-    for(i = 0; i < 5; i++){
+    for(i = 0; i &lt; 5; i++){
         if(Dice[i].diceVal === c){
             total_score += c;
         }
@@ -35,18 +63,18 @@ var smallStraight = function(Dice) {
 	var numbers = [0, 0, 0, 0, 0, 0];
 
 	//Increments the numbers array by one at the index of the die
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i &lt; 5; i++) {
 		numbers[Dice[i].diceVal - 1]++;
 	}
 
 	//These three if statements check if there are 4 dice that are in ascending numerical order
-	if (numbers[0] >= 1 && numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1) {
+	if (numbers[0] >= 1 &amp;&amp; numbers[1] >= 1 &amp;&amp; numbers[2] >= 1 &amp;&amp; numbers[3] >= 1) {
 		total_score = 30;
 		return total_score;
-	}else if (numbers[1] >= 1 && numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1) {
+	}else if (numbers[1] >= 1 &amp;&amp; numbers[2] >= 1 &amp;&amp; numbers[3] >= 1 &amp;&amp; numbers[4] >= 1) {
 		total_score = 30;
 		return total_score;
-	}else if (numbers[2] >= 1 && numbers[3] >= 1 && numbers[4] >= 1 && numbers[5] >= 1) {
+	}else if (numbers[2] >= 1 &amp;&amp; numbers[3] >= 1 &amp;&amp; numbers[4] >= 1 &amp;&amp; numbers[5] >= 1) {
 		total_score = 30;
 		return total_score;
 	}
@@ -65,15 +93,15 @@ var largeStraight = function(Dice) {
 	var numbers = [0, 0, 0, 0, 0, 0];
 
 	//Increments the numbers array by one at the index of the die
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i &lt; 5; i++) {
 		numbers[Dice[i].diceVal - 1]++;
 	}
 	
 	//These three if statements check if there are 5 dice that are in ascending numerical order
-	if (numbers[0] == 1 && numbers[1] == 1 && numbers[2] == 1 && numbers[3] == 1 && numbers[4] == 1) {
+	if (numbers[0] == 1 &amp;&amp; numbers[1] == 1 &amp;&amp; numbers[2] == 1 &amp;&amp; numbers[3] == 1 &amp;&amp; numbers[4] == 1) {
 		total_score = 40;
 		return total_score;
-	}else if (numbers[1] == 1 && numbers[2] == 1 && numbers[3] == 1 && numbers[4] == 1 && numbers[5] == 1) {
+	}else if (numbers[1] == 1 &amp;&amp; numbers[2] == 1 &amp;&amp; numbers[3] == 1 &amp;&amp; numbers[4] == 1 &amp;&amp; numbers[5] == 1) {
 		total_score = 40;
 		return total_score;
 	}
@@ -94,12 +122,12 @@ var fullHouse = function(Dice) {
 	var full = false;
 
 	//Increments the numbers array by one at the index of the die
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i &lt; 5; i++) {
 		numbers[Dice[i].diceVal - 1]++;
 	}
 
 	//Checks if there is a 3 of a kind
-	for (var i = 0; i < 6; i++) {
+	for (var i = 0; i &lt; 6; i++) {
 		if (numbers[i] == 3) {
 			full = true;
 			break;
@@ -108,7 +136,7 @@ var fullHouse = function(Dice) {
 
 	//Checks if there is a 2 of a kind only if there is a 3 of a kind
 	if (full) {
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i &lt; 6; i++) {
 			if (numbers[i] == 2) {
 				total_score = 25;
 				return total_score;
@@ -131,12 +159,12 @@ var threeOAK = function(Dice) {
 	var numbers = [0, 0, 0, 0, 0, 0];
 
 	//Increments the numbers array by one at the index of the die
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i &lt; 5; i++) {
 		numbers[Dice[i].diceVal - 1]++;
 	}
 
 	// Looks at the array of numbers for a 3 or more of a kind if it finds one sets the total score to 3 of that value
-	for(i = 0; i < 6; i++)
+	for(i = 0; i &lt; 6; i++)
 	{
 		if(numbers[i] >= 3){
 			total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
@@ -160,12 +188,12 @@ var fourOAK = function(Dice) {
 	var numbers = [0, 0, 0, 0, 0, 0];
 
 	//Increments the numbers array by one at the index of the die
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i &lt; 5; i++) {
 		numbers[Dice[i].diceVal - 1]++;
 	}
 
 	// Looks at the array of numbers for a 4 or more of a kind if it finds one sets the total score to 4 of that value 
-	for(i = 0; i < 6; i++)
+	for(i = 0; i &lt; 6; i++)
 	{
 		if(numbers[i] >= 4){
 			total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
@@ -186,7 +214,7 @@ var fiveOAK = function(Dice) {
 	var total_score = 0;
 
 	//Checks if 5 dice are equal
-	if((Dice[0].diceVal == Dice[1].diceVal) && (Dice[0].diceVal == Dice[2].diceVal) && (Dice[0].diceVal == Dice[3].diceVal) && (Dice[0].diceVal == Dice[4].diceVal)){
+	if((Dice[0].diceVal == Dice[1].diceVal) &amp;&amp; (Dice[0].diceVal == Dice[2].diceVal) &amp;&amp; (Dice[0].diceVal == Dice[3].diceVal) &amp;&amp; (Dice[0].diceVal == Dice[4].diceVal)){
 		total_score = 50;
 		return total_score;
 	}
@@ -205,3 +233,26 @@ var chance = function(Dice) {
 	total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
 	return total_score;
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Dice.html">Dice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chance">chance</a></li><li><a href="global.html#checkDiceClick">checkDiceClick</a></li><li><a href="global.html#clearScreen">clearScreen</a></li><li><a href="global.html#diceRoll">diceRoll</a></li><li><a href="global.html#Draw">Draw</a></li><li><a href="global.html#drawDice">drawDice</a></li><li><a href="global.html#fiveOAK">fiveOAK</a></li><li><a href="global.html#fourOAK">fourOAK</a></li><li><a href="global.html#fullHouse">fullHouse</a></li><li><a href="global.html#largeStraight">largeStraight</a></li><li><a href="global.html#loc">loc</a></li><li><a href="global.html#oneToSixSum">oneToSixSum</a></li><li><a href="global.html#playGame">playGame</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#rollActiveDice">rollActiveDice</a></li><li><a href="global.html#scoreSelction">scoreSelction</a></li><li><a href="global.html#smallStraight">smallStraight</a></li><li><a href="global.html#threeOAK">threeOAK</a></li><li><a href="global.html#Toggle">Toggle</a></li><li><a href="global.html#totalScores">totalScores</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Dec 04 2015 14:34:00 GMT-0700 (MST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
