@@ -218,17 +218,17 @@ var scoreSelection = function(scoreElement){
 	var scoreFuncNum = scoreElement.data("scoreFunc");
 
 	var scoreData = [
-		["#3_kind_score", function(){ return Three_OAK(allDice); }],
-		["#4_kind_score", function() { return Four_OAK(allDice); }],
-		["#full_house_score", function() { return Full_House(allDice); }],
-		["#sm_straight_score", function() { return Small_Straight(allDice); }],
-		["#lg_straight_score", function() { return Large_Straight(allDice); }],
-		["#yahtzee_score", function() { return Five_OAK(allDice); }],
-		["#chance_bonus_score", function() { return Chance(allDice); }]
+		["#3_kind_score", function(){ return threeOAK(allDice); }],
+		["#4_kind_score", function() { return fourOAK(allDice); }],
+		["#full_house_score", function() { return fullHouse(allDice); }],
+		["#sm_straight_score", function() { return smallStraight(allDice); }],
+		["#lg_straight_score", function() { return largeStraight(allDice); }],
+		["#yahtzee_score", function() { return fiveOAK(allDice); }],
+		["#chance_bonus_score", function() { return chance(allDice); }]
 	];
 
 	if (scoreFuncNum > 0 && scoreFuncNum <= 6) {
-		$("#" + scoreFuncNum + "_score").text(OneToSix_Sum(scoreFuncNum, allDice));
+		$("#" + scoreFuncNum + "_score").text(oneToSixSum(scoreFuncNum, allDice));
 	} else {
 		scoreFuncNum -= 7;
 
