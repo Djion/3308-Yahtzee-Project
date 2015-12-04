@@ -178,7 +178,7 @@ var scoreSelection = function(scoreElement){
 	var scoreData = [
 		["#3_kind_score", function(){ return Three_OAK(allDice); }],
 		["#4_kind_score", function() { return Four_OAK(allDice); }],
-		["#full_house_error", function() { return Full_House(allDice); }],
+		["#full_house_score", function() { return Full_House(allDice); }],
 		["#sm_straight_score", function() { return Small_Straight(allDice); }],
 		["#lg_straight_score", function() { return Large_Straight(allDice); }],
 		["#yahtzee_score", function() { return Five_OAK(allDice); }],
