@@ -36,7 +36,10 @@ Dice.prototype.diceRoll = function() {
     this.diceVal = Math.floor(Math.random() * 6) + 1;
 }
 
-// Will give the coordinate box of a dice on the canvas
+/**
+ * @function loc
+ * @description will give the coordinate box of a dice on the canvas
+ */
 Dice.prototype.loc = function() {
     var loc = {};
     loc['startX'] = 16 + 64 * (this.diceNum - 1);
@@ -49,7 +52,7 @@ Dice.prototype.loc = function() {
 
 /**
  * @function Draw
- * @descritpion Draws a dice at the correct location with the correct image
+ * @description Draws a dice at the correct location with the correct image
  */
 Dice.prototype.draw = function() {
     var imgDiceDimen = 128;
@@ -137,7 +140,7 @@ var checkDiceClick = function(x, y) {
 
 /**
  * @function clearScreen
- * @descriptionClears the canvas for redrawing
+ * @description Clears the canvas for redrawing
  */
 var clearScreen = function() {
     ctx.clearRect(0, 0, c.width, c.height);
@@ -153,7 +156,8 @@ var drawDice = function() {
 }
 
 /**
- * @function Rolls the active dice
+ * @function rollActiveDice
+ * @description Rolls the active dice
  */
 var rollActiveDice = function() {
     for (var i = 0; i < allDice.length; ++i)
