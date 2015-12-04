@@ -12,6 +12,9 @@ var turnCount = 0;
 var diceRolls = 0;
 //Variable to do stuff with for random waiting
 var waiting = 0;
+//Variable to check if the user wants to choose a score
+var chooseScore = false;
+
 
 
 //Function that will be used when the roll dice button has been clicked
@@ -53,6 +56,7 @@ for(turnCount < 13){
         //NOTE THIS STILL NEEDS TO BE IMPLEMENTED IN THE SCRIPT.JS FOR WHEN THE BUTTON IS CLICKED
         while(rollBool === false){
             waiting = 0;
+
             }
 
         //Sets the rollbool back to false so the waiting loop can be triggered again
