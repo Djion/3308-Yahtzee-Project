@@ -11,8 +11,7 @@
  *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.
  *@return {int} total_score  - The score calculated based on the function's description. 
  */
-var OneToSix_Sum = function(c, Dice)
-{
+var oneToSixSum = function(c, Dice) {
     var total_score = 0;
     // Looks at the array of dice and compares it to the variable c
     for(i = 0; i < 5; i++){
@@ -29,8 +28,7 @@ var OneToSix_Sum = function(c, Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Small_Straight = function(Dice)
-{
+var smallStraight = function(Dice) {
 	var total_score = 0;
 	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
 	var numbers = [0, 0, 0, 0, 0, 0];
@@ -60,8 +58,7 @@ var Small_Straight = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Large_Straight = function(Dice)
-{
+var largeStraight = function(Dice) {
 	var total_score = 0;
 	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
 	var numbers = [0, 0, 0, 0, 0, 0];
@@ -89,8 +86,7 @@ var Large_Straight = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Full_House = function(Dice)
-{
+var fullHouse = function(Dice) {
 	var total_score = 0;
 	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
 	var numbers = [0, 0, 0, 0, 0, 0];
@@ -128,8 +124,7 @@ var Full_House = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Three_OAK = function(Dice)
-{
+var threeOAK = function(Dice) {
 	var total_score = 0;
 	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
 	var numbers = [0, 0, 0, 0, 0, 0];
@@ -158,8 +153,7 @@ var Three_OAK = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Four_OAK = function(Dice)
-{
+var fourOAK = function(Dice) {
 	var total_score = 0;
 	//The numbers variable stores the number of a certain die we have, for example if we had 2 1's it would look like [2,0,0,0,0,0]
 	var numbers = [0, 0, 0, 0, 0, 0];
@@ -187,8 +181,7 @@ var Four_OAK = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Five_OAK = function(Dice)
-{
+var fiveOAK = function(Dice) {
 	var total_score = 0;
 
 	//Checks if 5 dice are equal
@@ -206,8 +199,7 @@ var Five_OAK = function(Dice)
  * @param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
  * @return {int} total_score - The score calculated based on the function's description. 
  */
-var Chance = function(Dice)
-{
+var chance = function(Dice) {
 	var total_score = 0;
 	total_score = Dice[0].diceVal + Dice[1].diceVal + Dice[2].diceVal + Dice[3].diceVal + Dice[4].diceVal;
 	return total_score;
