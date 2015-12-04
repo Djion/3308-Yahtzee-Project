@@ -19,7 +19,7 @@ var totalLower = 0;
 /**
  * Dice for rolling
  * @constructor
- * @arguements diceNum (number of dice), diceVal (value of dice), isActive (is the dice active), dimen (dimension for drawing)
+ * @description Has 4 values, diceNum - Which dice is it, diceVal - Value of the dice, isActive - is the dice clicked?, dimen - dimension for drawing
  */
 var Dice = function(diceNum, isActive) {
     this.diceNum = diceNum;
@@ -112,8 +112,8 @@ $(document).ready(function() {
 /**
  * @function checkDiceClick
  * @description Checks where the user clicks
- * @param {int} x
- * @param {int} y
+ * @param {int} x - x coordinate 
+ * @param {int} y - y coordinate
  */
 var checkDiceClick = function(x, y) {
     for (var i = 0; i < allDice.length; ++i) {
@@ -210,7 +210,7 @@ var totalScores = function() {
 /**
  * @function scoreSelction
  * @description Takes users score choice and runs correct score function, updates scorecard values, increments turn
- * @param {string} scoreElement 
+ * @param {string} scoreElement - score option user chose
  */
 var scoreSelection = function(scoreElement){
 	scoreElement.addClass("disabled", true);
