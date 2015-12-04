@@ -7,9 +7,9 @@
 /**
  *@function OneToSix_Sum
  *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.
- *@return total_score - The score calculated based on the function's description 
+ *@param c  {int} - An integer from 1 to 6.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var oneToSixSum = function(c, Dice) {
     var total_score = 0;
@@ -24,9 +24,9 @@ var oneToSixSum = function(c, Dice) {
 
 /**
  *@function Small_Straight
- *@description Returns 30 if there are 3 numbers in a row or 0 if .
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@description Returns 30 if there are 3 numbers in a row or 0 otherwise.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var smallStraight = function(Dice) {
 	var total_score = 0;
@@ -53,10 +53,10 @@ var smallStraight = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Large_Straight
+ *@description Returns 40 if there are 4 numbers in a row or 0 otherwise.
+*@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.   
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var largeStraight = function(Dice) {
 	var total_score = 0;
@@ -81,10 +81,10 @@ var largeStraight = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Full_House
+ *@description Returns 25 if there are 3 of a kind and 2 of a kind or 0 otherwise.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var fullHouse = function(Dice) {
 	var total_score = 0;
@@ -119,10 +119,10 @@ var fullHouse = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Three_OAK
+ *@description Returns the sum of all dice if there are 3 of a kind or 0 otherwise.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var threeOAK = function(Dice) {
 	var total_score = 0;
@@ -148,10 +148,10 @@ var threeOAK = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Four_OAK
+ *@description Returns sum of all the dice if there are 4 of a kind or 0 otherwise.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var fourOAK = function(Dice) {
 	var total_score = 0;
@@ -176,10 +176,10 @@ var fourOAK = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Five_OAK
+ *@description Returns 50 if there are 5 numbers in a row or 0 otherwise, this is also known as "Yahtzee!".
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var fiveOAK = function(Dice) {
 	var total_score = 0;
@@ -194,10 +194,10 @@ var fiveOAK = function(Dice) {
 }
 
 /**
- *@function OneToSix_Sum
- *@description Returns the the sum of all the dice with the given value c.
- *@param c - An integer from 1 to 6.
- *@param Dice - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@function Chance
+ *@description Returns the sum of all 5 dice.
+ *@param Dice {array of objects} - An array of dice objects, each one having an integer value from 1 to 6.  
+ *@return total_score {int} - The score calculated based on the function's description. 
  */
 var chance = function(Dice) {
 	var total_score = 0;
