@@ -244,6 +244,7 @@ var scoreSelection = function(scoreElement){
 		allDice[i].isActive = true;
 	
 	if (turnNumber === 13) {
+        clearScreen();
 		ctx.fillText("GAME OVER", 16, 36);
 		ctx.fillText("TOTAL SCORE = " + grandTotal, 16, 96);
         $("#rollButton").prop('disabled', true);
