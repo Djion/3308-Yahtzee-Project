@@ -27,7 +27,8 @@ The main directory contains all the major files that make the game work, includi
 ##How to build/run/test
 - Our code is javascript and html, building and running is as simple as launching the index.html and testing new code with your web browser of choice. 
 - Could also use node.js
-
+- Our unit tests are written in Python and can be found in the "UnitTesting" directory within our repository. To run the tests just type "python scoring_test.py" in the terminal and the results will be printed out.
+- We only wrote tests for our scoring code because all the other code displays something in a browser so errors are very easily noticeable without specific unit tests.
 
 ## CI System?
 - We did not use a continuous integration system.
