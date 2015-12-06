@@ -252,6 +252,9 @@ var scoreSelection = function(scoreElement){
 		ctx.fillText("GAME OVER", 16, 36);
 		ctx.fillText("TOTAL SCORE = " + grandTotal, 16, 96);
         $("#rollButton").prop('disabled', true);
+		$("#score_field").text("Score: " + grandTotal);
+		$("#hidden_score").val(grandTotal);
+		$("#score_form").show();
 	}
 }
 	

@@ -21,7 +21,16 @@ body {
 	margin: 20px 0;
 }
 
-table { 
+.highscore_table {
+	margin: 20px auto;
+	width: 100%;
+}
+
+.highscore_table th {
+	font-size: 20px;
+}
+
+.scoring_table { 
 	display: inline-block;
 	margin-left: 20px;
 	margin-bottom: 20px;
