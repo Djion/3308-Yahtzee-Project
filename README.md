@@ -12,8 +12,8 @@ Contains everything related to CSS for the webpage
 Contains dependancies for JSDocs and node.js
 - out
 Contains output for JSDocs, including the autodoc of our javascript files
-- PDFS
-Contains all the pdfs we have needed to turn in throughout the semester
+- PDFS/VIDEOS
+Contains all the pdfs we have needed to turn in throughout the semester along with the video demo of the project
 - All other files
 The main directory contains all the major files that make the game work, including javascripts
 
